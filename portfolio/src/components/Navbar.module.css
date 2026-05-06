@@ -1,0 +1,44 @@
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 4rem;
+  transition: all .4s;
+}
+.scrolled {
+  background: rgba(4,4,10,.85);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(110,94,248,.15);
+}
+.logo {
+  font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 500;
+  color: var(--violet2); letter-spacing: .02em;
+}
+.logo span { color: var(--pink); }
+
+.links { display: flex; gap: 2.5rem; list-style: none; }
+.links a {
+  color: var(--muted); text-decoration: none;
+  font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600;
+  position: relative; transition: color .3s;
+}
+.links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, var(--violet), var(--pink));
+  transform: scaleX(0); transform-origin: left; transition: transform .3s;
+}
+.links a:hover { color: var(--text); }
+.links a:hover::after { transform: scaleX(1); }
+
+.cta {
+  padding: .55rem 1.5rem; border-radius: 100px;
+  background: linear-gradient(135deg, var(--violet), var(--pink));
+  color: #fff; font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  text-decoration: none; transition: all .3s;
+  box-shadow: 0 0 20px rgba(110,94,248,.3);
+}
+.cta:hover { box-shadow: 0 0 40px rgba(240,80,160,.5); transform: translateY(-1px); }
+
+@media (max-width: 900px) {
+  .nav { padding: .9rem 1.5rem; }
+  .links, .cta { display: none; }
+}

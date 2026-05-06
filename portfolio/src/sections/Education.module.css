@@ -1,0 +1,38 @@
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+
+.card {
+  background: rgba(255,255,255,.025); border: 1px solid rgba(110,94,248,.1);
+  border-radius: 20px; padding: 2rem; transition: all .5s;
+  position: relative; overflow: hidden;
+}
+.card::before {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--violet), var(--cyan));
+  transform: scaleX(0); transition: transform .4s; transform-origin: left;
+}
+.card:hover::before { transform: scaleX(1); }
+.card:hover {
+  border-color: rgba(110,94,248,.25); transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.4), 0 0 40px rgba(0,229,255,.06);
+}
+
+.icon { font-size: 1.6rem; margin-bottom: 1rem; filter: drop-shadow(0 0 10px rgba(110,94,248,.5)); }
+.degree { font-size: .95rem; font-weight: 800; margin-bottom: .3rem; letter-spacing: -.01em; }
+.inst {
+  font-size: .8rem; font-weight: 600; margin-bottom: .4rem;
+  background: linear-gradient(90deg, var(--cyan), var(--violet2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.year { font-family: 'JetBrains Mono', monospace; font-size: .7rem; color: var(--muted); letter-spacing: .06em; }
+.badge {
+  display: inline-block; margin-top: .8rem;
+  background: rgba(255,190,60,.1); color: var(--gold);
+  border: 1px solid rgba(255,190,60,.25);
+  font-size: .7rem; font-family: 'JetBrains Mono', monospace;
+  padding: .25rem .75rem; border-radius: 100px;
+}
+.courses { margin-top: .8rem; font-size: .72rem; color: var(--dim); line-height: 1.6; }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}

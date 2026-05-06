@@ -1,0 +1,55 @@
+.timeline { position: relative; padding-left: 2rem; }
+.timeline::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px;
+  background: linear-gradient(180deg, var(--violet), var(--pink), transparent);
+}
+
+.item {
+  position: relative; margin-bottom: 3rem;
+  background: rgba(255,255,255,.02); border: 1px solid rgba(110,94,248,.1);
+  border-radius: 20px; padding: 2rem 2.2rem; transition: all .4s;
+}
+.item:hover {
+  border-color: rgba(110,94,248,.3); transform: translateX(8px);
+  box-shadow: 0 10px 40px rgba(0,0,0,.3), 0 0 30px rgba(110,94,248,.08);
+}
+
+.dot {
+  position: absolute; left: -2.4rem; top: 1.8rem;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--violet); box-shadow: 0 0 20px var(--violet);
+  border: 2px solid var(--c0);
+}
+
+.top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: .8rem; margin-bottom: 1rem; }
+.role { font-size: 1.15rem; font-weight: 800; letter-spacing: -.02em; }
+.company {
+  font-size: .82rem; font-weight: 600; margin-top: .25rem;
+  background: linear-gradient(90deg, var(--violet2), var(--pink));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.badge {
+  font-family: 'JetBrains Mono', monospace; font-size: .68rem; font-weight: 500;
+  padding: .35rem 1rem; border-radius: 100px;
+  background: rgba(110,94,248,.1); color: var(--violet2);
+  border: 1px solid rgba(110,94,248,.2); white-space: nowrap;
+  animation: badgePulse 3s ease-in-out infinite;
+}
+@keyframes badgePulse { 0%,100%{box-shadow:0 0 0 rgba(110,94,248,0)} 50%{box-shadow:0 0 15px rgba(110,94,248,.3)} }
+
+.pts { list-style: none; margin-top: .5rem; }
+.pts li {
+  font-size: .85rem; color: var(--muted); padding: .35rem 0 .35rem 1.5rem;
+  position: relative; line-height: 1.65;
+}
+.pts li::before {
+  content: ''; position: absolute; left: 0; top: .7rem;
+  width: 6px; height: 1px; background: linear-gradient(90deg, var(--violet), var(--pink));
+}
+
+.tags { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: 1rem; }
+.tag {
+  font-size: .7rem; padding: .2rem .7rem; border-radius: 8px;
+  background: rgba(110,94,248,.12); color: var(--violet2);
+  border: 1px solid rgba(110,94,248,.2); font-weight: 600;
+}

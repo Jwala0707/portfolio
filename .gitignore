@@ -1,0 +1,9 @@
+node_modules/
+portfolio/node_modules/
+portfolio/dist/
+portfolio/.vite/
+.env
+.env.local
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,13 @@
+.footer {
+  text-align: center; padding: 4rem;
+  border-top: 1px solid rgba(110,94,248,.08);
+  position: relative; z-index: 1;
+}
+.name {
+  font-size: 1.5rem; font-weight: 800;
+  background: linear-gradient(135deg, var(--violet), var(--pink), var(--cyan));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  letter-spacing: -.02em; margin-bottom: .5rem;
+}
+.sub { font-size: .78rem; color: var(--dim); font-family: 'JetBrains Mono', monospace; letter-spacing: .1em; }
+.craft { margin-top: 1.5rem; font-size: .7rem; color: #2a2a40; font-family: 'JetBrains Mono', monospace; }
