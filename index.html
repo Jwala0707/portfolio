@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jwala Singh — 3D Developer & Data Analyst Portfolio</title>
+  <meta name="description" content="3D Portfolio of Jwala Singh - Aspiring Backend Developer with Data Analyst Qualities. Inspired by modern creative developer animations.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-portfolio">
+
+  <!-- TOP SPOTLIGHT CONE (As shown in video template) -->
+  <div class="spotlight-cone"></div>
+  <canvas id="ambientStars" class="ambient-stars-canvas"></canvas>
+
+  <!-- LEFT FIXED VERTICAL SOCIAL BAR (Template Feature) -->
+  <aside class="left-social-strip">
+    <div class="social-strip-line"></div>
+    <div class="social-strip-icons">
+      <!-- GitHub -->
+      <a href="https://github.com/Jwala0707" target="_blank" rel="noopener noreferrer" class="strip-icon" title="GitHub (Jwala0707)">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/jwala-singh-24b272362/" target="_blank" rel="noopener noreferrer" class="strip-icon" title="LinkedIn Profile">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+      </a>
+      <!-- WhatsApp Direct -->
+      <a href="https://wa.me/919334849686?text=Hi%20Jwala,%20I%20saw%20your%203D%20portfolio%20and%20would%20love%20to%20connect!" target="_blank" rel="noopener noreferrer" class="strip-icon" title="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor">
+          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.217 8.217 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.01 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.17 1.73 2.64 4.19 3.7.59.25 1.04.41 1.4.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.22-.19-.47-.32z"/>
+        </svg>
+      </a>
+      <!-- Direct Call -->
+      <a href="tel:+919334849686" class="strip-icon" title="Call: +91 9334849686">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+      </a>
+    </div>
+    <span class="social-strip-text">FOLLOW ME</span>
+  </aside>
+
+  <!-- BOTTOM RIGHT FLOATING RESUME / CONTACT (Template Feature) -->
+  <div class="bottom-right-anchor">
+    <a href="#contact" class="floating-resume-btn">
+      <span>RESUME ↗</span>
+    </a>
+  </div>
+
+  <!-- STYLISH NAVBAR (Template Top Header) -->
+  <header class="navbar-wrapper">
+    <nav class="navbar" id="navbar">
+      <a href="#hero" class="brand-logo">
+        <div class="logo-mark">JS</div>
+        <div class="logo-text">
+          <span class="logo-name">Jwala Singh</span>
+          <span class="logo-sub">Backend & Data Analyst</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#hero" class="nav-link active">ABOUT</a></li>
+        <li><a href="#whatido" class="nav-link">WHAT&nbsp;I&nbsp;DO</a></li>
+        <li><a href="#experience" class="nav-link">EXPERIENCE</a></li>
+        <li><a href="#work" class="nav-link">WORK</a></li>
+        <li><a href="#techstack" class="nav-link">TECHSTACK</a></li>
+        <li><a href="#dashboards" class="nav-link">DASHBOARDS</a></li>
+        <li><a href="#certifications" class="nav-link">CERTS</a></li>
+        <li><a href="#contact" class="nav-link">CONTACT</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/919334849686?text=Hi%20Jwala,%20I%20am%20interested%20in%20your%20profile!" target="_blank" rel="noopener noreferrer" class="btn-spotlight">
+          <span>Let's Talk</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN SCROLLABLE WRAPPER -->
+  <main class="content-stage">
+
+    <!-- =====================================================================
+         1. HERO SECTION (Video Template: 00:00 - 00:02)
+         Central 3D Portrait / Puzzle + "A Creative" + Bold Dual Role Typography
+         ===================================================================== -->
+    <section class="section stage-hero" id="hero">
+      <div class="container hero-stage-container">
+        
+        <!-- Left / Center: 3D Character / Profile Puzzle Box with Spotlight Glow -->
+        <div class="hero-3d-showcase">
+          <div class="spotlight-beam-glow"></div>
+          <div class="puzzle-wrapper">
+            <div class="puzzle-card">
+              <!-- 3D Scene Viewport -->
+              <div class="puzzle-scene" id="puzzleScene">
+                <div class="puzzle-board" id="puzzleBoard">
+                  <!-- 16 3D Puzzle Tiles injected by script.js -->
+                </div>
+                <div class="puzzle-assembled-overlay" id="puzzleOverlay">
+                  <img src="ME/WhatsApp%20Image%202026-09-26%20at%201.03.40%20PM.jpeg" alt="Jwala Singh" id="profileFullImg">
+                </div>
+              </div>
+
+              <!-- Puzzle Interactive Dock -->
+              <div class="puzzle-footer">
+                <div class="puzzle-status">
+                  <span class="puzzle-status-icon">🧩</span>
+                  <span id="puzzleStatusText">3D Puzzle: Assembled</span>
+                </div>
+                <button class="puzzle-btn" id="btnScatterPuzzle" title="Scatter & Reassemble 3D Puzzle">
+                  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                  </svg>
+                  <span>Re-Assemble 3D</span>
+                </button>
+              </div>
+            </div>
+            <div class="puzzle-3d-hint">Hover to tilt in 3D • Click button to see pieces fly in</div>
+          </div>
+        </div>
+
+        <!-- Right Side: Exact Video Typography Hierarchy -->
+        <div class="hero-typography-block">
+          <div class="creative-kicker">
+            <span class="kicker-line"></span>
+            <span class="kicker-text">A Creative</span>
+          </div>
+
+          <h1 class="hero-stage-headline">
+            <span class="title-top-shadow">BACKEND</span>
+            <span class="title-main-glow">DEVELOPER</span>
+          </h1>
+
+          <div class="hero-role-sub">
+            <span class="role-separator">&amp;</span>
+            <span class="data-analyst-badge">DATA ANALYST</span>
+          </div>
+
+          <!-- Video Style About Card (00:02 in video) -->
+          <div class="about-card-spotlight">
+            <div class="about-card-badge">ABOUT ME</div>
+            <p class="about-text-glow">
+              I am an <strong>Aspiring Backend Developer with Data Analyst Qualities</strong>. Computer Science graduate (2026) with a passion for blending high-throughput backend architecture with deep data-driven insights. Hands-on experience developing production REST APIs in Python & Node.js, and distilling large datasets into actionable executive dashboards.
+            </p>
+            <div class="about-quick-specs">
+              <div class="spec-pill"><span>🎓</span> B.Tech CSE '26 (NIMS)</div>
+              <div class="spec-pill"><span>📊</span> 7,000+ Records Analyzed</div>
+              <div class="spec-pill"><span>⚡</span> 7+ Production Dashboards</div>
+            </div>
+          </div>
+
+          <div class="hero-btn-row">
+            <a href="#work" class="btn btn-primary">
+              <span>View Projects</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="https://wa.me/919334849686?text=Hi%20Jwala,%20I%20reviewed%20your%20portfolio!" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-stage">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.217 8.217 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.01 4.54-3.68 8.23-8.22 8.23z"/>
+              </svg>
+              <span>WhatsApp (+91 9334849686)</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         2. "WHAT I DO" SECTION (Video Template: 00:03 - 00:04)
+         3D Workspace Desk Setup on Left + DEVELOP / ANALYZE Dual Columns
+         ===================================================================== -->
+    <section class="section what-i-do-section" id="whatido">
+      <div class="container">
+        
+        <div class="section-title-wrap">
+          <span class="section-sub-glow">SPECIALIZATION</span>
+          <h2 class="section-big-heading">WHAT I DO</h2>
+        </div>
+
+        <div class="whatido-grid">
+          
+          <!-- Left: 3D Developer Desk / Terminal Workstation Simulation -->
+          <div class="workstation-3d-card">
+            <div class="terminal-window">
+              <div class="terminal-bar">
+                <div class="terminal-dots">
+                  <span class="dot-red"></span>
+                  <span class="dot-yellow"></span>
+                  <span class="dot-green"></span>
+                </div>
+                <span class="terminal-title">jwala@backend-core: ~</span>
+              </div>
+              <div class="terminal-body" id="liveTerminalCode">
+                <span class="t-line t-comment"># Initializing Dual-Engine Architecture</span>
+                <span class="t-line"><span class="t-keyword">class</span> <span class="t-class">JwalaSingh</span>(<span class="t-parent">BackendEngineer</span>, <span class="t-parent">DataAnalyst</span>):</span>
+                <span class="t-line">&nbsp;&nbsp;<span class="t-def">def</span> <span class="t-func">__init__</span>(self):</span>
+                <span class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;self.core = [<span class="t-str">"Python"</span>, <span class="t-str">"Flask"</span>, <span class="t-str">"Django"</span>, <span class="t-str">"Node.js"</span>]</span>
+                <span class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;self.data = [<span class="t-str">"SQL"</span>, <span class="t-str">"Pandas"</span>, <span class="t-str">"Power BI"</span>, <span class="t-str">"Tableau"</span>]</span>
+                <span class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;self.status = <span class="t-str">"Ready to Build High-Impact Systems"</span></span>
+                <span class="t-line t-comment"># System active: All endpoints responding 200 OK</span>
+                <span class="t-line t-prompt">$ curl -X GET https://jwala.dev/api/status <span class="t-cursor">█</span></span>
+              </div>
+            </div>
+            
+            <div class="workspace-badge-strip">
+              <div class="mini-spec-box">
+                <span class="spec-num">REST</span>
+                <span class="spec-label">APIs Built</span>
+              </div>
+              <div class="mini-spec-box">
+                <span class="spec-num">ACID</span>
+                <span class="spec-label">Transactions</span>
+              </div>
+              <div class="mini-spec-box">
+                <span class="spec-num">BI</span>
+                <span class="spec-label">Storytelling</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: The 2 Core Columns as in Video (DEVELOP & ANALYZE) -->
+          <div class="whatido-columns">
+            
+            <!-- Pillar 1: DEVELOP -->
+            <div class="pillar-card">
+              <div class="pillar-header">
+                <div class="pillar-index">01</div>
+                <h3 class="pillar-title">DEVELOP</h3>
+              </div>
+              <p class="pillar-desc">
+                Architecting resilient backend systems and robust RESTful APIs. Specializing in Python (Flask, Django REST Framework), Node.js, and Express.js with JWT authentication, role-based access control (RBAC), and strict request validation.
+              </p>
+              <div class="pillar-tags">
+                <span>Python</span>
+                <span>Django & DRF</span>
+                <span>Flask</span>
+                <span>Node.js</span>
+                <span>JWT & RBAC</span>
+                <span>PostgreSQL</span>
+                <span>MongoDB</span>
+                <span>Postman QA</span>
+              </div>
+            </div>
+
+            <!-- Pillar 2: ANALYZE & DESIGN -->
+            <div class="pillar-card">
+              <div class="pillar-header">
+                <div class="pillar-index">02</div>
+                <h3 class="pillar-title">ANALYZE</h3>
+              </div>
+              <p class="pillar-desc">
+                Transforming raw database records and application logs into high-impact visual intelligence. Formulating complex SQL queries, automated ETL pipelines, anomaly detection checks, hypothesis testing (Chi-square), and executive Power BI / Tableau dashboards.
+              </p>
+              <div class="pillar-tags">
+                <span>Data Analysis</span>
+                <span>SQL Joins & CTEs</span>
+                <span>Power BI</span>
+                <span>Tableau</span>
+                <span>Pandas & NumPy</span>
+                <span>Hypothesis Testing</span>
+                <span>Anomaly Detection</span>
+                <span>KPI Dashboards</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         3. EXPERIENCE SECTION (Video Template: 00:05 - 00:06)
+         "My career & experience" + Split Years/Milestones & Achievement Cards
+         ===================================================================== -->
+    <section class="section experience-stage-section" id="experience">
+      <div class="container">
+        
+        <div class="section-title-wrap text-center">
+          <span class="section-sub-glow">TIMELINE & TRACK</span>
+          <h2 class="section-big-heading">My Career & Experience</h2>
+          <p class="section-lead-muted">
+            Hover over any internship card to flip and view <strong>What I Did & What I Learnt</strong>.
+          </p>
+        </div>
+
+        <div class="career-experience-layout">
+          
+          <!-- Left Column: Chronological Rail Stops (As shown in video) -->
+          <div class="milestones-column">
+            
+            <div class="milestone-item active-milestone" data-target="uptoskills">
+              <span class="milestone-year">2026</span>
+              <div class="milestone-dot"></div>
+              <div class="milestone-text">
+                <h4>Data Analyst Intern</h4>
+                <p>UptoSkills (Remote)</p>
+              </div>
+            </div>
+
+            <div class="milestone-item" data-target="uptoskills-frontend">
+              <span class="milestone-year">2025</span>
+              <div class="milestone-dot"></div>
+              <div class="milestone-text">
+                <h4>Frontend Web Dev Intern</h4>
+                <p>UptoSkills (Remote)</p>
+              </div>
+            </div>
+
+            <div class="milestone-item" data-target="kaleidonex">
+              <span class="milestone-year">2024</span>
+              <div class="milestone-dot"></div>
+              <div class="milestone-text">
+                <h4>Python Developer Intern</h4>
+                <p>Kaleidonex Technologies</p>
+              </div>
+            </div>
+
+            <div class="milestone-item" data-target="university">
+              <span class="milestone-year">2022 – 2026</span>
+              <div class="milestone-dot"></div>
+              <div class="milestone-text">
+                <h4>B.Tech in Computer Science</h4>
+                <p>NIMS University, Jaipur</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Interactive 3D Flip Detail Cards -->
+          <div class="experience-cards-column">
+            
+            <!-- Card 1: UptoSkills Data Analyst -->
+            <div class="flip-exp-card" id="card-uptoskills">
+              <div class="flip-exp-inner">
+                <!-- Front -->
+                <div class="flip-exp-front">
+                  <div class="exp-badge-row">
+                    <span class="exp-status-tag completed">Completed Internship</span>
+                    <span class="exp-date-tag">Jun 2026 – Sep 2026</span>
+                  </div>
+                  <h3 class="exp-company-name">UptoSkills (Remote)</h3>
+                  <h4 class="exp-role-title">Data Analyst Intern</h4>
+                  <p class="exp-summary-text">
+                    Analyzed and validated structured datasets using Python, SQL, Excel, and Power BI; constructed executive KPI dashboards and statistical reporting systems.
+                  </p>
+                  <div class="exp-flip-hint">🔄 Hover / Tap to flip & reveal achievements</div>
+                </div>
+                <!-- Back -->
+                <div class="flip-exp-back">
+                  <div class="exp-badge-row">
+                    <span class="exp-status-tag completed">Key Contributions</span>
+                    <span class="exp-date-tag">What I Did &amp; Learnt</span>
+                  </div>
+                  <h3 class="exp-company-name">UptoSkills (Remote)</h3>
+                  <h4 class="exp-role-title">Data Analyst Intern</h4>
+                  <ul class="exp-bullets">
+                    <li><strong>Analytics &amp; Integrity:</strong> Cleaned and aggregated structured datasets in Python, SQL, and Excel with automated validation.</li>
+                    <li><strong>Executive Dashboards:</strong> Designed interactive Power BI visual scorecards communicating trends, anomalies, and correlations.</li>
+                    <li><strong>Core Takeaway:</strong> Mastered the full data lifecycle from raw SQL queries to executive-ready business insights.</li>
+                  </ul>
+                  <div class="exp-flip-hint back-hint">🔄 Hover away to return</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: UptoSkills Frontend Web Dev -->
+            <div class="flip-exp-card" id="card-uptoskills-frontend">
+              <div class="flip-exp-inner">
+                <!-- Front -->
+                <div class="flip-exp-front">
+                  <div class="exp-badge-row">
+                    <span class="exp-status-tag completed">Completed Internship</span>
+                    <span class="exp-date-tag">Jun 2025 – Sep 2025</span>
+                  </div>
+                  <h3 class="exp-company-name">UptoSkills (Remote)</h3>
+                  <h4 class="exp-role-title">Frontend Web Development Intern</h4>
+                  <p class="exp-summary-text">
+                    Developed reusable React.js components and integrated REST APIs to connect frontend applications with backend services and handle JSON-based data.
+                  </p>
+                  <div class="exp-flip-hint">🔄 Hover / Tap to flip & reveal achievements</div>
+                </div>
+                <!-- Back -->
+                <div class="flip-exp-back">
+                  <div class="exp-badge-row">
+                    <span class="exp-status-tag completed">Key Contributions</span>
+                    <span class="exp-date-tag">What I Did &amp; Learnt</span>
+                  </div>
+                  <h3 class="exp-company-name">UptoSkills (Remote)</h3>
+                  <h4 class="exp-role-title">Frontend Web Development Intern</h4>
+                  <ul class="exp-bullets">
+                    <li><strong>React.js &amp; REST APIs:</strong> Developed reusable React.js components and integrated REST APIs to connect frontend applications with backend services and handle JSON-based data.</li>
+                    <li><strong>UI &amp; API Debugging:</strong> Debugged UI and API integration issues, tested application workflows, and ensured seamless client-server data synchronization.</li>
+                    <li><strong>Git &amp; Agile Delivery:</strong> Used Git version control and Agile team practices to deliver reliable, robust, and responsive web application features.</li>
+                  </ul>
+                  <div class="exp-flip-hint back-hint">🔄 Hover away to return</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Kaleidonex Technologies -->
+            <div class="flip-exp-card" id="card-kaleidonex">
+              <div class="flip-exp-inner">
+                <!-- Front -->
+                <div class="flip-exp-front">
+                  <div class="exp-badge-row">
+                    <span class="exp-status-tag completed">Completed Internship</span>
+                    <span class="exp-date-tag">Oct 2024 – Nov 2024</span>
+                  </div>
+                  <h3 class="exp-company-name">Kaleidonex Technologies</h3>
+                  <h4 class="exp-role-title">Python Development Intern</h4>
+                  <p class="exp-summary-text">
+                    Engineered backend data workflows with Python and MySQL; automated data extraction, sanitization, validation, and structured output generation.
+                  </p>
+                  <div class="exp-flip-hint">🔄 Hover / Tap to flip & reveal achievements</div>
+                </div>
+                <!-- Back -->
+                <div class="flip-exp-back">
+                  <div class="exp-badge-row">
+                    <span class="exp-status-tag completed">Key Contributions</span>
+                    <span class="exp-date-tag">What I Did &amp; Learnt</span>
+                  </div>
+                  <h3 class="exp-company-name">Kaleidonex Technologies</h3>
+                  <h4 class="exp-role-title">Python Development Intern</h4>
+                  <ul class="exp-bullets">
+                    <li><strong>Backend Workflows:</strong> Built automated Python scripts to extract, transform, and load MySQL tables with zero data loss.</li>
+                    <li><strong>Validation Checks:</strong> Formulated custom data verification routines that eliminated pipeline inconsistencies at the source.</li>
+                    <li><strong>Core Takeaway:</strong> Gained industrial rigor in exception handling, database stability, and structured ETL outputs.</li>
+                  </ul>
+                  <div class="exp-flip-hint back-hint">🔄 Hover away to return</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: University Academic Track -->
+            <div class="flip-exp-card" id="card-university">
+              <div class="flip-exp-inner">
+                <!-- Front -->
+                <div class="flip-exp-front">
+                  <div class="exp-badge-row">
+                    <span class="exp-status-tag degree">Academic Baseline</span>
+                    <span class="exp-date-tag">2022 – 2026</span>
+                  </div>
+                  <h3 class="exp-company-name">NIMS University, Jaipur</h3>
+                  <h4 class="exp-role-title">Bachelor of Technology (Computer Science Engineering)</h4>
+                  <p class="exp-summary-text">
+                    Continuous university degree showing on-campus coursework, engineering fundamentals, and real-world project builds during non-internship terms.
+                  </p>
+                  <div class="exp-flip-hint">🔄 Hover / Tap to flip & reveal academic scope</div>
+                </div>
+                <!-- Back -->
+                <div class="flip-exp-back">
+                  <div class="exp-badge-row">
+                    <span class="exp-status-tag degree">Academic Focus</span>
+                    <span class="exp-date-tag">Coursework &amp; Projects</span>
+                  </div>
+                  <h3 class="exp-company-name">NIMS University, Jaipur</h3>
+                  <h4 class="exp-role-title">B.Tech Computer Science Engineering</h4>
+                  <ul class="exp-bullets">
+                    <li><strong>Core Foundations:</strong> Data Structures &amp; Algorithms, Database Management Systems (DBMS), Operating Systems, and OOP.</li>
+                    <li><strong>Campus Systems:</strong> Developed full-stack systems including TaskFlow (Flask/React) and Smart Parking System (Node/Mongo).</li>
+                    <li><strong>Core Takeaway:</strong> Strong algorithmic and architectural grounding that powers backend scalability and data analytics.</li>
+                  </ul>
+                  <div class="exp-flip-hint back-hint">🔄 Hover away to return</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         4. "MY WORK" PROJECTS SECTION (Video Template: 00:07 - 00:08)
+         Numbered Cards: 01, 02, 03... with Tech Tags & Direct GitHub Links
+         ===================================================================== -->
+    <section class="section my-work-section" id="work">
+      <div class="container">
+        
+        <div class="section-title-wrap">
+          <span class="section-sub-glow">FEATURED PORTFOLIO</span>
+          <h2 class="section-big-heading">My Work</h2>
+        </div>
+
+        <div class="projects-stage-grid">
+          
+          <!-- Project 01: TaskFlow -->
+          <div class="work-card">
+            <div class="work-card-top">
+              <span class="work-index">01</span>
+              <span class="work-category">Full Stack REST Application</span>
+            </div>
+            <h3 class="work-title">TaskFlow — Task Management System</h3>
+            <p class="work-desc">
+              A production-ready task management platform powered by a Python Flask REST API supporting full CRUD operations, JWT authentication, and role-based access control (RBAC), integrated with a reactive frontend.
+            </p>
+            <div class="work-highlights">
+              <div class="hl-item"><span>✓</span> Modular Flask route blueprints with request validation and exception handling.</div>
+              <div class="hl-item"><span>✓</span> Verified status codes and response schemas using automated Postman tests.</div>
+            </div>
+            <div class="work-footer">
+              <div class="work-tech-pills">
+                <span>Python</span>
+                <span>Flask</span>
+                <span>React</span>
+                <span>SQLite</span>
+                <span>JWT</span>
+                <span>Postman</span>
+              </div>
+              <a href="https://github.com/Jwala0707" target="_blank" rel="noopener noreferrer" class="work-github-btn">
+                <span>GitHub</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 02: Smart Parking System -->
+          <div class="work-card">
+            <div class="work-card-top">
+              <span class="work-index">02</span>
+              <span class="work-category">Full Stack Web Application</span>
+            </div>
+            <h3 class="work-title">Smart Parking Management System</h3>
+            <p class="work-desc">
+              Engineered a high-concurrency backend API for real-time parking slot reservations, secure user credentials, and parking lot management workflows using Express.js and MongoDB.
+            </p>
+            <div class="work-highlights">
+              <div class="hl-item"><span>✓</span> Asynchronous slot allocation with real-time availability sync.</div>
+              <div class="hl-item"><span>✓</span> Integrated with React UI, handling multi-user booking collisions cleanly.</div>
+            </div>
+            <div class="work-footer">
+              <div class="work-tech-pills">
+                <span>Node.js</span>
+                <span>Express.js</span>
+                <span>MongoDB</span>
+                <span>React</span>
+                <span>REST API</span>
+              </div>
+              <a href="https://github.com/Jwala0707" target="_blank" rel="noopener noreferrer" class="work-github-btn">
+                <span>GitHub</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 03: Customer Behavior & Churn Analytics -->
+          <div class="work-card featured-highlight">
+            <div class="work-card-top">
+              <span class="work-index">03</span>
+              <span class="work-category">Statistical Modeling & EDA</span>
+            </div>
+            <h3 class="work-title">Customer Behavior & Churn Analytics</h3>
+            <p class="work-desc">
+              Cleaned and analyzed 7,043 telecom customer records using Python, Pandas, and SQL. Uncovered that month-to-month contracts accounted for 28% of the base with an alarming 51% churn rate.
+            </p>
+            <div class="work-highlights">
+              <div class="hl-item"><span>✓</span> Validated contract dependency using Chi-square hypothesis testing (p &lt; 0.001).</div>
+              <div class="hl-item"><span>✓</span> Generated correlation heatmaps and predictive insights via Matplotlib & Seaborn.</div>
+            </div>
+            <div class="work-footer">
+              <div class="work-tech-pills">
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>SQL</span>
+                <span>Chi-Square</span>
+                <span>Matplotlib</span>
+                <span>Seaborn</span>
+              </div>
+              <a href="https://github.com/Jwala0707" target="_blank" rel="noopener noreferrer" class="work-github-btn">
+                <span>GitHub</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         5. "MY TECHSTACK" 3D FLOATING PHYSICS SPHERES (Video Template: 00:09 - 00:10)
+         3D Interactive Physics Balls with Tech Icons that bounce and float!
+         ===================================================================== -->
+    <section class="section techstack-stage-section" id="techstack">
+      <div class="container text-center">
+        
+        <div class="section-title-wrap">
+          <span class="section-sub-glow">INTERACTIVE 3D ENVIRONMENT</span>
+          <h2 class="section-big-heading">MY TECHSTACK</h2>
+          <p class="section-lead-muted">Move your mouse or drag the 3D tech spheres! Hover any sphere to reveal detailed engineering learnings.</p>
+        </div>
+
+        <!-- 3D Physics Techstack Container -->
+        <div class="techstack-physics-viewport" id="techPhysicsStage">
+          <canvas id="techPhysicsCanvas" class="tech-canvas"></canvas>
+          
+          <!-- Live Tech Inspector Overlay -->
+          <div class="tech-inspector-overlay" id="techInspector">
+            <div class="tech-inspect-tag">SKILL INTELLIGENCE</div>
+            <h4 id="techInspectName">Python</h4>
+            <div class="tech-inspect-detail">
+              <p><strong>Where Used:</strong> <span id="techInspectWhere">Kaleidonex Technologies, UptoSkills, TaskFlow, Churn Analysis</span></p>
+              <p><strong>What I Learnt:</strong> <span id="techInspectLearnt">Engineered automated backend data extraction, REST APIs, statistical models, and anomaly detection workflows.</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Static Tech Badges for quick scan -->
+        <div class="tech-chips-bar">
+          <div class="t-badge" data-skill="Python">Python</div>
+          <div class="t-badge" data-skill="Django">Django & DRF</div>
+          <div class="t-badge" data-skill="Flask">Flask</div>
+          <div class="t-badge" data-skill="Node.js">Node.js</div>
+          <div class="t-badge" data-skill="React">React.js</div>
+          <div class="t-badge" data-skill="SQL">SQL & MySQL</div>
+          <div class="t-badge" data-skill="PostgreSQL">PostgreSQL</div>
+          <div class="t-badge" data-skill="MongoDB">MongoDB</div>
+          <div class="t-badge" data-skill="Power BI">Power BI</div>
+          <div class="t-badge" data-skill="Tableau">Tableau</div>
+          <div class="t-badge" data-skill="Pandas">Pandas & NumPy</div>
+          <div class="t-badge" data-skill="Postman">Postman QA</div>
+          <div class="t-badge" data-skill="JWT">JWT & RBAC</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         6. DASHBOARDS GALLERY: TILTED PHOTO PILE ON A DESK (As requested)
+         Corners visible, enlarged on click, and flung away in random directions!
+         ===================================================================== -->
+    <section class="section dashboards-stage-section" id="dashboards">
+      <div class="container">
+        
+        <div class="section-title-wrap text-center">
+          <span class="section-sub-glow">BUSINESS INTELLIGENCE</span>
+          <h2 class="section-big-heading">The Dashboards Desk</h2>
+          <p class="section-lead-muted">
+            Printed analytical reports stacked on a desk. <strong>Click any photo to enlarge it!</strong> Once enlarged, click "Send Away" to see it fling off in a random direction.
+          </p>
+        </div>
+
+        <!-- Desk Toolbar -->
+        <div class="desk-toolbar">
+          <button class="desk-btn" id="btnFlingNext">
+            <span>Fling Top Photo (Next)</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button class="desk-btn" id="btnReshuffle">
+            <span>🔄 Re-stack Desk Pile</span>
+          </button>
+          <button class="desk-btn" id="btnToggleGrid">
+            <span>▦ Switch to Grid View</span>
+          </button>
+          <div class="desk-counter" id="deskCounter">Photo 1 of 7</div>
+        </div>
+
+        <!-- The Desk Surface -->
+        <div class="desk-surface" id="deskSurface">
+          <div class="photo-pile" id="photoPile">
+            
+            <!-- Dashboard 1 -->
+            <div class="print-card" data-index="0" data-tilt="-8" data-x="-20" data-y="15" data-title="Executive Sales & Profit Analytics" data-tools="Power BI • SQL • KPI Metrics">
+              <div class="print-frame">
+                <div class="print-photo">
+                  <img src="Dashboards/image.jpg" alt="Sales Analytics Dashboard">
+                </div>
+                <div class="print-caption">
+                  <span class="caption-title">Sales & Profit Overview</span>
+                  <span class="caption-tag">#01 Executive BI</span>
+                </div>
+              </div>
+              <div class="corner-peek">Click to Enlarge 🔍</div>
+            </div>
+
+            <!-- Dashboard 2 -->
+            <div class="print-card" data-index="1" data-tilt="9" data-x="25" data-y="-18" data-title="Customer Segmentation & Retention" data-tools="Power BI • Python EDA">
+              <div class="print-frame">
+                <div class="print-photo">
+                  <img src="Dashboards/image%20(1).jpg" alt="Customer Segmentation Dashboard">
+                </div>
+                <div class="print-caption">
+                  <span class="caption-title">Customer Segmentation</span>
+                  <span class="caption-tag">#02 Cohorts</span>
+                </div>
+              </div>
+              <div class="corner-peek">Click to Enlarge 🔍</div>
+            </div>
+
+            <!-- Dashboard 3 -->
+            <div class="print-card" data-index="2" data-tilt="-14" data-x="-35" data-y="-25" data-title="Operational Metrics & Performance Tracking" data-tools="Tableau • Excel Aggregations">
+              <div class="print-frame">
+                <div class="print-photo">
+                  <img src="Dashboards/image%20(2).jpg" alt="Operational Metrics Dashboard">
+                </div>
+                <div class="print-caption">
+                  <span class="caption-title">Operations & Throughput</span>
+                  <span class="caption-tag">#03 Throughput</span>
+                </div>
+              </div>
+              <div class="corner-peek">Click to Enlarge 🔍</div>
+            </div>
+
+            <!-- Dashboard 4 -->
+            <div class="print-card" data-index="3" data-tilt="13" data-x="30" data-y="20" data-title="Regional Revenue & Geographical Intelligence" data-tools="Power BI • Spatial Analysis">
+              <div class="print-frame">
+                <div class="print-photo">
+                  <img src="Dashboards/image%20(3).jpg" alt="Regional Revenue Dashboard">
+                </div>
+                <div class="print-caption">
+                  <span class="caption-title">Regional Revenue Maps</span>
+                  <span class="caption-tag">#04 Geo Analytics</span>
+                </div>
+              </div>
+              <div class="corner-peek">Click to Enlarge 🔍</div>
+            </div>
+
+            <!-- Dashboard 5 -->
+            <div class="print-card" data-index="4" data-tilt="-5" data-x="-12" data-y="30" data-title="Churn Probability & Risk Analysis" data-tools="Python • Pandas • Statistical Tests">
+              <div class="print-frame">
+                <div class="print-photo">
+                  <img src="Dashboards/image%20(4).jpg" alt="Churn Probability Dashboard">
+                </div>
+                <div class="print-caption">
+                  <span class="caption-title">Churn Probability & Risk</span>
+                  <span class="caption-tag">#05 Predictive</span>
+                </div>
+              </div>
+              <div class="corner-peek">Click to Enlarge 🔍</div>
+            </div>
+
+            <!-- Dashboard 6 -->
+            <div class="print-card" data-index="5" data-tilt="15" data-x="18" data-y="-35" data-title="Monthly Growth & Anomaly Diagnostics" data-tools="SQL • Power BI • Outlier Detection">
+              <div class="print-frame">
+                <div class="print-photo">
+                  <img src="Dashboards/image%20(5).jpg" alt="Growth & Anomaly Diagnostics">
+                </div>
+                <div class="print-caption">
+                  <span class="caption-title">Growth & Anomalies</span>
+                  <span class="caption-tag">#06 Deep Diagnostic</span>
+                </div>
+              </div>
+              <div class="corner-peek">Click to Enlarge 🔍</div>
+            </div>
+
+            <!-- Dashboard 7 -->
+            <div class="print-card" data-index="6" data-tilt="-3" data-x="0" data-y="0" data-title="Consolidated Business KPI Scorecard" data-tools="Power BI • Executive Reporting">
+              <div class="print-frame">
+                <div class="print-photo">
+                  <img src="Dashboards/image%20(6).jpg" alt="Business KPI Scorecard">
+                </div>
+                <div class="print-caption">
+                  <span class="caption-title">Executive KPI Scorecard</span>
+                  <span class="caption-tag">#07 Summary</span>
+                </div>
+              </div>
+              <div class="corner-peek">Click to Enlarge 🔍</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Lightbox Modal -->
+        <div class="dashboard-modal" id="dashboardModal">
+          <div class="modal-backdrop" id="modalBackdrop"></div>
+          <div class="modal-dialog">
+            <div class="modal-header">
+              <div>
+                <h3 id="modalTitle">Dashboard Title</h3>
+                <p id="modalTools">Tools & Insights</p>
+              </div>
+              <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+              <img src="" alt="Enlarged Dashboard" id="modalImage">
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-outline btn-sm" id="modalFlingBtn">
+                <span>Send Away to Another Side</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <button class="btn btn-primary btn-sm" id="modalCloseBtn">Close</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         7. CERTIFICATIONS SECTION
+         ===================================================================== -->
+    <section class="section certs-stage-section" id="certifications">
+      <div class="container">
+        
+        <div class="section-title-wrap">
+          <span class="section-sub-glow">CREDENTIALS</span>
+          <h2 class="section-big-heading">Certifications & Simulations</h2>
+        </div>
+
+        <div class="certs-stage-grid">
+          
+          <div class="cert-box">
+            <div class="cert-box-badge">⭐ Verified</div>
+            <div class="cert-box-date">Jul 2026</div>
+            <h3 class="cert-box-name">Data Analyst Certification</h3>
+            <h4 class="cert-box-org">OneRoadmap</h4>
+            <p>Advanced EDA, multi-table SQL queries, business metrics formulations, and analytical communication.</p>
+          </div>
+
+          <div class="cert-box">
+            <div class="cert-box-badge">⭐ Verified</div>
+            <div class="cert-box-date">Jun 2026</div>
+            <h3 class="cert-box-name">Data Analyst Course</h3>
+            <h4 class="cert-box-org">Simplilearn SkillUp</h4>
+            <p>Comprehensive training in Python data pipelines (Pandas, NumPy), Excel modeling, and Power BI reporting.</p>
+          </div>
+
+          <div class="cert-box">
+            <div class="cert-box-badge">🏢 Simulation</div>
+            <div class="cert-box-date">Jan 2026</div>
+            <h3 class="cert-box-name">Data Analytics Job Simulation</h3>
+            <h4 class="cert-box-org">Deloitte Australia</h4>
+            <p>Client advisory simulation covering data quality audits, business telemetry, and forensic analysis.</p>
+          </div>
+
+          <div class="cert-box">
+            <div class="cert-box-badge">🏢 Simulation</div>
+            <div class="cert-box-date">May 2026</div>
+            <h3 class="cert-box-name">Data Visualisation Job Simulation</h3>
+            <h4 class="cert-box-org">Tata Group</h4>
+            <p>Executive visual architecture, KPI scorecard design, and delivering actionable retail insights to leadership.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         8. CONTACT SECTION (WhatsApp, Call, Email, LinkedIn, GitHub)
+         ===================================================================== -->
+    <section class="section contact-stage-section" id="contact">
+      <div class="container">
+        
+        <div class="section-title-wrap text-center">
+          <span class="section-sub-glow">LET'S COLLABORATE</span>
+          <h2 class="section-big-heading">Get In Touch</h2>
+          <p class="section-lead-muted">Available for high-impact Backend Engineering and Data Analyst roles.</p>
+        </div>
+
+        <div class="contact-stage-layout">
+          
+          <!-- Direct Channel Reach -->
+          <div class="channels-column">
+            
+            <!-- WhatsApp -->
+            <a href="https://wa.me/919334849686?text=Hi%20Jwala,%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20connect!" target="_blank" rel="noopener noreferrer" class="channel-stage-item wa-card">
+              <div class="ch-icon">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                  <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.217 8.217 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.01 4.54-3.68 8.23-8.22 8.23z"/>
+                </svg>
+              </div>
+              <div class="ch-info">
+                <span class="ch-tag">Instant Chat</span>
+                <span class="ch-val">+91 9334849686</span>
+                <span class="ch-link-hint">Launch WhatsApp Chat →</span>
+              </div>
+            </a>
+
+            <!-- Calling -->
+            <a href="tel:+919334849686" class="channel-stage-item call-card">
+              <div class="ch-icon">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div class="ch-info">
+                <span class="ch-tag">Direct Phone</span>
+                <span class="ch-val">+91 9334849686</span>
+                <span class="ch-link-hint">Place Direct Call →</span>
+              </div>
+            </a>
+
+            <!-- Email -->
+            <div class="channel-stage-item mail-card">
+              <div class="ch-icon">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="ch-info">
+                <span class="ch-tag">Email Address</span>
+                <a href="mailto:jwalasingh0510@gmail.com" class="ch-val email-text">jwalasingh0510@gmail.com</a>
+                <div class="ch-actions-row">
+                  <a href="mailto:jwalasingh0510@gmail.com" class="btn-micro">Write Email</a>
+                  <button class="btn-micro" id="btnCopyEmail">📋 Copy Email</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links-pill-box">
+              <span class="sl-title">Social Links:</span>
+              <div class="sl-buttons">
+                <a href="https://www.linkedin.com/in/jwala-singh-24b272362/" target="_blank" rel="noopener noreferrer" class="sl-btn">
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/Jwala0707" target="_blank" rel="noopener noreferrer" class="sl-btn">
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Direct Inquiry Form -->
+          <div class="contact-form-stage">
+            <form id="contactForm" class="stage-form">
+              <h3 class="form-heading">Send a Direct Message</h3>
+              <p class="form-desc">Send me a note and I will respond promptly via email or WhatsApp.</p>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="senderName">Your Name</label>
+                  <input type="text" id="senderName" class="form-input" placeholder="e.g. Hiring Manager" required>
+                </div>
+                <div class="form-field">
+                  <label for="senderEmail">Your Email</label>
+                  <input type="email" id="senderEmail" class="form-input" placeholder="recruiter@tech.com" required>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="messageSubject">Subject / Role Opportunity</label>
+                <input type="text" id="messageSubject" class="form-input" placeholder="Backend Engineer / Data Analyst Position" required>
+              </div>
+
+              <div class="form-field">
+                <label for="messageBody">Message</label>
+                <textarea id="messageBody" class="form-input" rows="4" placeholder="Hello Jwala, we reviewed your work and would love to speak..." required></textarea>
+              </div>
+
+              <div class="form-btn-actions">
+                <button type="submit" class="btn btn-primary" id="btnSendMail">
+                  <span>Send via Email</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+                <button type="button" class="btn btn-secondary" id="btnSendWhatsAppForm">
+                  <span>Send via WhatsApp</span>
+                </button>
+              </div>
+              <div id="formFeedback" class="form-feedback"></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- STAGE FOOTER -->
+  <footer class="stage-footer">
+    <div class="container footer-stage-content">
+      <div class="footer-left-info">
+        <div class="f-mark">JS</div>
+        <p>© 2026 Jwala Singh — Aspiring Backend Developer with Data Analyst Qualities. Inspired by 3D Creative Developer Stage.</p>
+      </div>
+      <div class="footer-stage-links">
+        <a href="#hero">Back to Top ↑</a>
+        <a href="https://www.linkedin.com/in/jwala-singh-24b272362/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Jwala0707" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://wa.me/919334849686" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="tel:+919334849686">Call</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+  <!-- Interactive Script -->
+  <script src="script.js"></script>
+</body>
+</html>
