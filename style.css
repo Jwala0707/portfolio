@@ -1979,6 +1979,13 @@ a {
   margin-top: 14px;
   font-size: 0.86rem;
   font-weight: 600;
+  line-height: 1.5;
+}
+
+.form-feedback a {
+  color: var(--yellow-radiant);
+  text-decoration: underline;
+  margin-left: 4px;
 }
 
 /* Footer */

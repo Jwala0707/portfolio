@@ -599,22 +599,92 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const btnSendMail = document.getElementById('btnSendMail');
+  const btnSendText = document.getElementById('btnSendText');
+
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const name = document.getElementById('senderName').value.trim();
       const email = document.getElementById('senderEmail').value.trim();
       const subject = document.getElementById('messageSubject').value.trim();
       const body = document.getElementById('messageBody').value.trim();
 
-      const fullSubject = encodeURIComponent(`[Portfolio Inquiry] ${subject} - from ${name}`);
-      const fullBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${body}`);
+      if (!name || !email || !body) {
+        if (formFeedback) {
+          formFeedback.style.color = '#EF4444';
+          formFeedback.textContent = 'Please fill out all required fields.';
+        }
+        return;
+      }
 
-      window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${fullSubject}&body=${fullBody}`;
-
+      if (btnSendMail) btnSendMail.disabled = true;
+      if (btnSendText) btnSendText.textContent = 'Sending...';
       if (formFeedback) {
         formFeedback.style.color = '#FDE047';
-        formFeedback.textContent = 'Drafting email in your default client...';
+        formFeedback.textContent = 'Delivering your message to Jwala...';
+      }
+
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL_ADDRESS}&su=${encodeURIComponent(`[Portfolio] ${subject} - from ${name}`)}&body=${encodeURIComponent(`Hi Jwala,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${body}`)}`;
+
+      // If browsing locally as file://, FormSubmit API cannot be called directly; open Gmail Web directly
+      if (window.location.protocol === 'file:') {
+        window.open(gmailUrl, '_blank');
+        if (formFeedback) {
+          formFeedback.style.color = '#34D399';
+          formFeedback.innerHTML = `Draft opened in <strong>Gmail Web</strong>! Click Send in Gmail to deliver your message. <a href="${gmailUrl}" target="_blank" style="color:#FDE047;text-decoration:underline;">Click here if tab didn't open</a>.`;
+        }
+        if (btnSendMail) btnSendMail.disabled = false;
+        if (btnSendText) btnSendText.textContent = 'Send Message';
+        return;
+      }
+
+      // Hosted on Web (GitHub Pages: https://jwala0707.github.io/portfolio/)
+      try {
+        const response = await fetch(`https://formsubmit.co/ajax/${EMAIL_ADDRESS}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            _subject: `[Portfolio Inquiry] ${subject} - from ${name}`,
+            message: `From: ${name} (${email})\nSubject: ${subject}\n\nMessage:\n${body}`,
+            _captcha: 'false',
+            _template: 'table'
+          })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success === 'true') {
+          if (formFeedback) {
+            formFeedback.style.color = '#34D399';
+            formFeedback.innerHTML = `✅ <strong>Message sent successfully!</strong> Delivered directly to Jwala's email inbox (${EMAIL_ADDRESS}).`;
+          }
+          contactForm.reset();
+        } else if (data.message && data.message.includes('Activation')) {
+          // FormSubmit requires one-time activation
+          if (formFeedback) {
+            formFeedback.style.color = '#FDE047';
+            formFeedback.innerHTML = `⚠️ Form requires 1-time activation! Check your Gmail (<strong>${EMAIL_ADDRESS}</strong>) and click <em>Activate Form</em>. Meanwhile, opening in <a href="${gmailUrl}" target="_blank" style="color:#FFF;text-decoration:underline;">Gmail Web</a>...`;
+          }
+          window.open(gmailUrl, '_blank');
+        } else {
+          throw new Error(data.message || 'Dispatch failed');
+        }
+      } catch (err) {
+        // Fallback to Gmail Web compose
+        if (formFeedback) {
+          formFeedback.style.color = '#FDE047';
+          formFeedback.innerHTML = `Opening message in <strong>Gmail Web</strong>... <a href="${gmailUrl}" target="_blank" style="color:#FFF;text-decoration:underline;">Click here to send</a>.`;
+        }
+        window.open(gmailUrl, '_blank');
+      } finally {
+        if (btnSendMail) btnSendMail.disabled = false;
+        if (btnSendText) btnSendText.textContent = 'Send Message';
       }
     });
   }
